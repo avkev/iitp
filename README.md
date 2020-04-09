@@ -2,9 +2,14 @@
 
 ## t2
 
+#### guidance
+* 랜딩파트 수정. optimal_path 에서 rosparam get 으로 landing phase를 받아 true면 traveling에서 landing 으로 바뀜. 픽셀이 감지 될 때마다 landing_hz를 증가시키며 10 이후부터는 landing_x, landing_y, -3이 셋포인트가 되며 z=0.4이하가 되면 nan 값이 들어감. 픽셀이 감지 안된다면 landing_not_found가 증가되며 150 이상이면 1.8미터, 300이상이면 2미터까지 올라감. 해보니까 인식된 6번 중 5번이 2.0m에서 이루어짐. 학습 다시 필요?
+* constant yaw는 optimal_path 에서 guidance로 옮김
+
 #### optimal_path
 * 비행 중 waypoint 변경 시 astar_restart를 1로 바꿔주는데 이때 Obstacle(pose)가 1이라면 다시 astar_restart를 0으로 바꾸면서 경로 생성 안됨
 --> 해당 문제 해결 위해 waypoint 변경 시 path_exist를 false로 바꾸고 해당 값이 true일 때만 astar_restart가 0으로 되도록 바꿈. 아직 비행 테스트 안됨
+* waypoint gen에서 waypoint flag가 마지막이 되면 landing phase를 true로 바꿈. 해당 값이 true면 astar_restart는 0으로 바꾸면서 경로 재생성 안됨 
 
 ## t1
 
