@@ -1,2 +1,0 @@
-  optimal_path_t2.cpp
-

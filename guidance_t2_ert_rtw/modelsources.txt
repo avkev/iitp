@@ -1,2 +1,0 @@
-  guidance_t2.cpp
-
