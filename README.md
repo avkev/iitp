@@ -1,5 +1,11 @@
 # iitp t branch
 
+## t2
+
+#### optimal_path
+* 비행 중 waypoint 변경 시 astar_restart를 1로 바꿔주는데 이때 Obstacle(pose)가 1이라면 다시 astar_restart를 0으로 바꾸면서 경로 생성 안됨
+--> 해당 문제 해결 위해 waypoint 변경 시 path_exist를 false로 바꾸고 해당 값이 true일 때만 astar_restart가 0으로 되도록 바꿈. 아직 비행 테스트 안됨
+
 ## t1
 
 #### guidance
