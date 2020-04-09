@@ -1,0 +1,27 @@
+1. 리포 다운로드
+git clone https://github.com/optimize0107/iitp
+
+2. 브렌치 관련
+	(1) 현재 브렌치 확인
+		git branch
+	(2) 현재 브렌치 변경
+		git checkout ${브렌치이름}
+	(3) 현재 브렌치를 변경하면서 새로운 브렌치 생성
+		git checkout -b ${브렌치이름}
+
+4. github에 있는 코드로 최신화 하기(현재 브렌치를 기준으로 이루어짐)
+	git pull
+
+5. github에 올리기
+	(1) 변경사항 확인
+		git status
+	(2) 업데이트 할 사항 선택
+		git add --all		 ===> 변경사항 전부 업로드
+		git add ${특정파일이름}   ===> 해당 파일만 업데이트
+	(3) 선택한 변경 사항에 대한 commit 작성
+		git commit -m "{commit 내용}"
+	(4) github에 업데이트 실시
+		git push
+	
+
+	
