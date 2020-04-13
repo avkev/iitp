@@ -7,6 +7,7 @@
 * constant yaw는 optimal_path 에서 guidance로 옮김
 * 랜딩파트 2차 수정. landing_not_found로 인해서 1.8, 2.0미터로 셋포인트가 들어가다가도 인식되면 landing_hz가 10 되기 전에는 1.2로 다시 들어감. 해당 부분 수정함. 
 * 랜딩파트 3차 수정. landing_hz가 10 이상이면 헬리포트가 감지되지 않아도 landing_x, y가 나뉘도록 되어 있었음. 헬리포트가 감지될 때만 나뉘도록 수정함
+* 수정 필요함 => waypoint 변경 시 yaw 값 바꿔주는게 0.8m 이내일 때 적용되는데 가이던스를 못따라가면서 0.8미터 밖으로 나가면 다시 원래 yaw 셋포인트가 들어감
 
 #### optimal_path : A* 재시작 기준 수정, landing phase 추가
 * 비행 중 waypoint 변경 시 astar_restart를 1로 바꿔주는데 이때 Obstacle(pose)가 1이라면 다시 astar_restart를 0으로 바꾸면서 경로 생성 안됨
@@ -38,4 +39,5 @@
 * HeliportDetector3.mat : 헬리포트 일부만 찍혀도 인식 가능
 
 * ros_detect : pixel_XY 토픽, bboxes 토픽 publish
+
 
