@@ -13,6 +13,7 @@
 * 비행 중 waypoint 변경 시 astar_restart를 1로 바꿔주는데 이때 Obstacle(pose)가 1이라면 다시 astar_restart를 0으로 바꾸면서 경로 생성 안됨
 --> 해당 문제 해결 위해 waypoint 변경 시 path_exist를 false로 바꾸고 해당 값이 true일 때만 astar_restart가 0으로 되도록 바꿈. 아직 비행 테스트 안됨
 * waypoint gen에서 waypoint flag가 마지막이 되면 landing phase를 true로 바꿈. 해당 값이 true면 astar_restart는 0으로 바꾸면서 경로 재생성 안됨 
+* 실제 고려되는 장애물(스캐터링 포함) 시각화용 토픽 추가(obs_x, obs_y, obs_z, obs_num). 실제 실행시 해당 부분만 commentout 해도 상관 없음
 
 ## t1
 
