@@ -1,5 +1,12 @@
 # iitp t branch
 
+## t3
+
+#### optimal_path : 스캐터링 변경
+* 스캐터링 파트 변경했음
+* 그리드 크기 바꾸면 바꿀 순 있는데 단순하게는 안될 듯. A*에 관련해서 좀 봐야 할 듯?
+
+
 ## t2
 
 #### guidance : 랜딩 수정, Landing phase 추가
@@ -9,7 +16,7 @@
 * 랜딩파트 3차 수정. landing_hz가 10 이상이면 헬리포트가 감지되지 않아도 landing_x, y가 나뉘도록 되어 있었음. 헬리포트가 감지될 때만 나뉘도록 수정함
 * 수정 필요함 => waypoint 변경 시 yaw 값 바꿔주는게 0.8m 이내일 때 적용되는데 가이던스를 못따라가면서 0.8미터 밖으로 나가면 다시 원래 yaw 셋포인트가 들어감
 
-#### optimal_path : A* 재시작 기준 수정, landing phase 추가
+#### optimal_path : A* 재시작 기준 수정, landing phase 추가, 스캐터링 장애물 시각화
 * 비행 중 waypoint 변경 시 astar_restart를 1로 바꿔주는데 이때 Obstacle(pose)가 1이라면 다시 astar_restart를 0으로 바꾸면서 경로 생성 안됨
 --> 해당 문제 해결 위해 waypoint 변경 시 path_exist를 false로 바꾸고 해당 값이 true일 때만 astar_restart가 0으로 되도록 바꿈. 아직 비행 테스트 안됨
 * waypoint gen에서 waypoint flag가 마지막이 되면 landing phase를 true로 바꿈. 해당 값이 true면 astar_restart는 0으로 바꾸면서 경로 재생성 안됨 
